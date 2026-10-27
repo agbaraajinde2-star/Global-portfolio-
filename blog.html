@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050816">
+
+    <meta name="description"
+          content="Explore technology articles and learning notes by Morakinyo Martins Iyanuoluwa.">
+
+    <title>Blog | Martins</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== BLOG PAGE ===== */
+
+        .blog-page {
+            width: min(1050px, 92%);
+            margin: 0 auto;
+            padding: 55px 0 80px;
+        }
+
+        /* ===== BLOG HEADING ===== */
+
+        .blog-heading {
+            width: 100%;
+            margin: 0 auto 42px;
+            text-align: center;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 30px;
+            color: #00d9ff;
+            background: rgba(0, 217, 255, 0.06);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .blog-heading h1 {
+            margin: 20px 0;
+            font-size: clamp(23px, 5.5vw, 55px);
+            line-height: 1.3;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00d9ff, #985cff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .blog-heading p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #aab4ce;
+            line-height: 1.8;
+        }
+
+        /* ===== BLOG CARDS ===== */
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 25px;
+            border: 1px solid rgba(152, 92, 255, 0.22);
+            border-radius: 20px;
+            background: rgba(12, 18, 37, 0.9);
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+            animation: fadeUp 0.8s ease both;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            border-color: #00d9ff;
+            box-shadow: 0 12px 30px rgba(0, 217, 255, 0.08);
+        }
+
+        .blog-category {
+            color: #00d9ff;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .blog-card h2 {
+            color: #f4f7ff;
+            font-size: 21px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .blog-meta {
+            color: #7f8ba8;
+            font-size: 12px;
+            margin-bottom: 18px;
+        }
+
+        .blog-card p {
+            color: #aab4ce;
+            line-height: 1.8;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        /* ===== CENTERED CARD BUTTONS ===== */
+
+        .blog-button-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .blog-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 11px 18px;
+            color: #00d9ff;
+            border: 1px solid #00d9ff;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: 0.3s ease;
+        }
+
+        .blog-button:hover {
+            color: #050816;
+            background: #00d9ff;
+            box-shadow: 0 0 18px rgba(0, 217, 255, 0.25);
+        }
+
+        /* ===== BLOG NOTE ===== */
+
+        .blog-note {
+            margin-top: 30px;
+            padding: 22px;
+            border: 1px dashed rgba(152, 92, 255, 0.4);
+            border-radius: 16px;
+            color: #aab4ce;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .blog-back {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0;
+            color: #00d9ff;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .blog-back:hover {
+            text-shadow: 0 0 12px #00d9ff;
+        }
+
+        /* ===== MOBILE RESPONSIVENESS ===== */
+
+        @media (max-width: 650px) {
+            .blog-page {
+                padding-top: 35px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-card {
+                padding: 22px;
+            }
+
+          .blog-heading h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: 100%;
+    margin: 20px auto;
+    font-size: clamp(18px, 5.5vw, 55px);
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.blog-heading h1 .gradient-text {
+    white-space: nowrap;
+    display: inline;
+}
+        }
+
+        @media (max-width: 360px) {
+            .blog-heading h1 {
+                font-size: 21px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .blog-card {
+                animation: none;
+                transition: none;
+            }
+
+            .blog-button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon">MM</span>
+
+            <span class="logo-text">
+                <span class="logo-name">
+                    MARTINS<span class="logo-dot">.</span>
+                </span>
+
+                <span class="logo-subtitle">
+                    SOFTWARE ENGINEER
+                </span>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="Skills.html">Skills</a>
+            <a href="blog.html" aria-current="page">Blog</a> 
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- ===== MAIN BLOG CONTENT ===== -->
+
+    <main class="blog-page">
+
+        <section class="blog-heading">
+
+            <span class="blog-tag">
+                MY KNOWLEDGE SPACE
+            </span>
+
+            <h1>
+                Ideas &amp; <span class="gradient-text">Insights</span>
+            </h1>
+
+            <p>
+                A space for sharing what I'm learning about web development,
+                software engineering, technology, and responsible cybersecurity.
+            </p>
+
+        </section>
+
+        <!-- ===== BLOG ARTICLES ===== -->
+
+        <section class="blog-grid" aria-label="Blog articles">
+
+            <!-- ARTICLE 1 -->
+
+            <article class="blog-card">
+
+                <div class="blog-category">
+                    WEB DEVELOPMENT
+                </div>
+
+                <h2>My Journey Into Web Development</h2>
+
+                <div class="blog-meta">
+                    Learning Notes · Introduction
+                </div>
+
+                <p>
+                    An introduction to my journey of learning how websites
+                    work, practising HTML and CSS, and gradually bringing
+                    ideas to life with code.
+                </p>
+
+                <div class="blog-button-wrap">
+                    <a href="projects.html" class="blog-button">
+                        Explore My Projects →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- ARTICLE 2 -->
+
+            <article class="blog-card">
+
+                <div class="blog-category">
+                    SOFTWARE ENGINEERING
+                </div>
+
+                <h2>Why I'm Building Projects While Learning</h2>
+
+                <div class="blog-meta">
+                    Learning Notes · Practice
+                </div>
+
+                <p>
+                    Discover why hands-on practice, experimenting with ideas,
+                    and learning from feedback are important parts of my
+                    software development journey.
+                </p>
+
+                <div class="blog-button-wrap">
+                    <a href="projects.html" class="blog-button">
+                        View Projects →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- ARTICLE 3 -->
+
+            <article class="blog-card">
+
+                <div class="blog-category">
+                    CYBERSECURITY
+                </div>
+
+                <h2>Building Safer Digital Habits</h2>
+
+                <div class="blog-meta">
+                    Digital Safety · Beginner
+                </div>
+
+                <p>
+                    A beginner-friendly introduction to strong passwords,
+                    multi-factor authentication, software updates, and
+                    protecting personal accounts online.
+                </p>
+
+                <div class="blog-button-wrap">
+                    <a href="cybersecurity.html" class="blog-button">
+                        Explore Cybersecurity →
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- ARTICLE 4 -->
+
+            <article class="blog-card">
+
+                <div class="blog-category">
+                    CONTINUOUS LEARNING
+                </div>
+
+                <h2>Small Steps, Consistent Progress</h2>
+
+                <div class="blog-meta">
+                    Personal Growth · Learning
+                </div>
+
+                <p>
+                    Why setting achievable goals, practising regularly,
+                    and learning from mistakes can help develop lasting
+                    technical skills.
+                </p>
+
+                <div class="blog-button-wrap">
+                    <a href="about.html" class="blog-button">
+                        About My Journey →
+                    </a>
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- ===== FOOTER NOTE ===== -->
+
+        <section class="blog-note">
+
+            <strong class="gradient-text">
+                Always Learning. Always Building.
+            </strong>
+
+            <br>
+
+            More articles will be added as I develop and publish
+            original technical content.
+
+        </section>
+
+        <a href="index.html" class="blog-back">
+            ← Back to Home
+        </a>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer class="footer">
+        <p>
+            © 2026 Morakinyo Martins Iyanuoluwa. Built with passion.
+        </p>
+    </footer>
+
+</body>
+</html>

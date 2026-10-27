@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Skills | Martins</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .skills-page {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 55px 20px;
+        }
+
+        .skills-hero {
+            text-align: center;
+            margin-bottom: 45px;
+            animation: fadeIn 1s ease;
+        }
+
+        .skills-hero .tag {
+            display: inline-block;
+            color: #00d9ff;
+            border: 1px solid rgba(0, 217, 255, 0.4);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .skills-hero h1 {
+            font-size: clamp(32px, 6vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00d9ff, #985cff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skills-hero p {
+            max-width: 680px;
+            margin: auto;
+            line-height: 1.8;
+            opacity: 0.8;
+        }
+
+        .skills-section {
+            margin-bottom: 45px;
+        }
+
+        .skills-section h2 {
+            font-size: clamp(22px, 4vw, 30px);
+            margin-bottom: 22px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            position: relative;
+            overflow: hidden;
+            padding: 25px;
+            border-radius: 18px;
+            background: rgba(13, 20, 43, 0.85);
+            border: 1px solid rgba(0, 217, 255, 0.18);
+            transition: transform 0.35s ease,
+                        border-color 0.35s ease,
+                        box-shadow 0.35s ease;
+            animation: fadeIn 0.8s ease both;
+        }
+
+        .skill-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00d9ff, #985cff);
+            transition: left 0.5s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+            border-color: #00d9ff;
+            box-shadow: 0 0 22px rgba(0, 217, 255, 0.13);
+        }
+
+        .skill-card:hover::before {
+            left: 0;
+        }
+
+        .skill-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.78;
+        }
+
+        .skill-status {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            color: #00d9ff;
+            background: rgba(0, 217, 255, 0.09);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .learning-box {
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 20px;
+            background: linear-gradient(
+                135deg,
+                rgba(0, 217, 255, 0.08),
+                rgba(152, 92, 255, 0.12)
+            );
+            border: 1px solid rgba(152, 92, 255, 0.3);
+        }
+
+        .learning-box h2 {
+            margin-bottom: 15px;
+            font-size: clamp(23px, 4vw, 32px);
+        }
+
+        .learning-box p {
+            max-width: 650px;
+            margin: 0 auto 25px;
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        .skills-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 24px;
+            border-radius: 30px;
+            color: #050816;
+            background: linear-gradient(90deg, #00d9ff, #985cff);
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skills-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 22px rgba(0, 217, 255, 0.4);
+        }
+
+        .skills-footer {
+            text-align: center;
+            padding: 30px 10px 10px;
+            font-size: 13px;
+            opacity: 0.65;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(18px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 800px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 520px) {
+            .skills-page {
+                padding: 40px 15px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-card {
+                padding: 22px;
+            }
+
+            .skills-hero {
+                margin-bottom: 35px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .skill-card,
+            .skills-hero {
+                animation: none;
+            }
+
+            .skill-card,
+            .skills-btn {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="gradient-text">MM</span> MARTINS.
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Projects</a>
+            <a href="Skills.html" class="active">Skills</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="skills-page">
+
+        <!-- HERO -->
+        <section class="skills-hero">
+            <span class="tag">MY TECHNICAL JOURNEY</span>
+
+            <h1>
+                Skills &amp; <span class="gradient-text">Expertise</span>
+            </h1>
+
+            <p>
+                Exploring technology, building creative solutions, and
+                developing the skills needed to become a better software
+                engineer and cybersecurity professional.
+            </p>
+        </section>
+
+        <!-- DEVELOPMENT -->
+        <section class="skills-section">
+            <h2>🌐 Web Development</h2>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="skill-icon">🧱</div>
+                    <h3>HTML5</h3>
+                    <p>
+                        Learning to structure websites with meaningful,
+                        accessible, and well-organized HTML.
+                    </p>
+                    <span class="skill-status">Learning &amp; Practising</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS3</h3>
+                    <p>
+                        Exploring responsive layouts, animations,
+                        gradients, and modern visual designs.
+                    </p>
+                    <span class="skill-status">Learning &amp; Practising</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>
+                        Developing an understanding of interactive
+                        websites, programming logic, and DOM basics.
+                    </p>
+                    <span class="skill-status">Developing</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PROGRAMMING -->
+        <section class="skills-section">
+            <h2>💻 Software Engineering</h2>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="skill-icon">🧠</div>
+                    <h3>Problem Solving</h3>
+                    <p>
+                        Practising logical thinking and breaking
+                        complicated tasks into smaller steps.
+                    </p>
+                    <span class="skill-status">Building Foundations</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">🛠️</div>
+                    <h3>Debugging</h3>
+                    <p>
+                        Learning to identify errors, understand
+                        error messages, and improve code.
+                    </p>
+                    <span class="skill-status">Developing</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Mobile Development Tools</h3>
+                    <p>
+                        Exploring mobile-friendly coding workflows
+                        and building websites with Spck Editor.
+                    </p>
+                    <span class="skill-status">Hands-on Practice</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CYBERSECURITY -->
+        <section class="skills-section">
+            <h2>🔐 Cybersecurity</h2>
+
+            <div class="skills-grid">
+
+                <article class="skill-card">
+                    <div class="skill-icon">🛡️</div>
+                    <h3>Security Fundamentals</h3>
+                    <p>
+                        Studying basic security principles,
+                        online safety, and responsible technology use.
+                    </p>
+                    <span class="skill-status">Learning</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">🌍</div>
+                    <h3>Networking Basics</h3>
+                    <p>
+                        Exploring how devices communicate and
+                        how networks help the internet work.
+                    </p>
+                    <span class="skill-status">Learning</span>
+                </article>
+
+                <article class="skill-card">
+                    <div class="skill-icon">🔎</div>
+                    <h3>Security Awareness</h3>
+                    <p>
+                        Learning about strong passwords, phishing,
+                        privacy, and protecting digital accounts.
+                    </p>
+                    <span class="skill-status">Building Foundations</span>
+                </article>
+
+        </section>
+
+        <!-- CURRENT FOCUS -->
+        <section class="learning-box">
+            <h2>🚀 Always <span class="gradient-text">Learning</span></h2>
+
+            <p>
+                My journey is just beginning. I am focused on practising
+                consistently, improving my coding skills, learning from
+                mistakes, and creating projects that demonstrate my growth.
+            </p>
+
+            <a href="projects.html" class="skills-btn">
+                Explore My Projects →
+            </a>
+        </section>
+
+        <footer class="skills-footer">
+            <p>© 2026 Martins. Learning, building, and growing every day.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

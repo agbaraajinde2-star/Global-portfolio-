@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050816">
+
+    <title>About Me | Martins</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-page {
+            width: min(1000px, 92%);
+            margin: auto;
+            padding: 55px 0 80px;
+        }
+
+        .about-heading {
+            text-align: center;
+            margin-bottom: 45px;
+            animation: fadeUp .8s ease both;
+        }
+
+        .about-tag {
+            display: inline-block;
+            padding: 8px 15px;
+            border: 1px solid rgba(0,217,255,.3);
+            border-radius: 30px;
+            color: #00d9ff;
+            background: rgba(0,217,255,.06);
+            font-size: 12px;
+            letter-spacing: 2px;
+        }
+
+        .about-heading h1 {
+            margin: 20px 0;
+            font-size: clamp(32px, 7vw, 55px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg,#00d9ff,#985cff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .about-heading p {
+            max-width: 650px;
+            margin: auto;
+            color: #aab4ce;
+            line-height: 1.8;
+        }
+
+        .about-card {
+            padding: 30px;
+            margin-bottom: 25px;
+            background: rgba(12,18,37,.85);
+            border: 1px solid rgba(152,92,255,.22);
+            border-radius: 20px;
+            animation: fadeUp .8s ease both;
+            transition: .3s ease;
+        }
+
+        .about-card:hover {
+            border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0,217,255,.08);
+            transform: translateY(-3px);
+        }
+
+        .about-card h2 {
+            font-size: 23px;
+            margin-bottom: 16px;
+        }
+
+        .about-card p {
+            color: #aab4ce;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 12px;
+        }
+
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .interest-item {
+            padding: 18px;
+            border: 1px solid rgba(0,217,255,.15);
+            border-radius: 14px;
+            background: rgba(0,217,255,.04);
+        }
+
+        .interest-item h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .interest-item p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        .about-quote {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 18px;
+            background: linear-gradient(
+                120deg,
+                rgba(0,217,255,.08),
+                rgba(152,92,255,.08)
+            );
+            border: 1px solid rgba(0,217,255,.2);
+        }
+
+        .about-quote p {
+            font-size: clamp(18px,4vw,25px);
+            line-height: 1.6;
+        }
+
+        .about-quote span {
+            color: #00d9ff;
+        }
+
+        .about-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 22px;
+            background: #00d9ff;
+            color: #050816;
+            font-weight: 700;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: .3s ease;
+        }
+
+        .about-button:hover {
+            box-shadow: 0 0 22px rgba(0,217,255,.4);
+            transform: translateY(-2px);
+        }
+
+        .about-center {
+            text-align: center;
+        }
+
+        @media(max-width:600px) {
+            .about-page {
+                padding-top: 35px;
+            }
+
+            .about-card {
+                padding: 22px;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .about-heading,
+            .about-card {
+                animation: none;
+            }
+
+            .about-card,
+            .about-button {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">MM</span>
+
+            <span class="logo-text">
+                <span class="logo-name">MARTINS<span class="logo-dot">.</span></span>
+                <span class="logo-subtitle">SOFTWARE ENGINEER</span>
+            </span>
+            <a href="about.html" class="active">About</a>
+        </a>
+
+        <nav class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="project.html">Projects</a>
+  <a href="Skills.html">Skills</a>
+  <a href="blog.html">blog</a>
+
+  <a href="contact.html">Contact</a>
+</nav>
+    </header>
+
+    <main class="about-page">
+
+        <section class="about-heading">
+            <span class="about-tag">GET TO KNOW ME</span>
+
+            <h1>About <span class="gradient-text">Martins</span></h1>
+
+            <p>
+                I'm Morakinyo Martins Iyanuoluwa, a software engineering
+                enthusiast and aspiring web developer passionate about
+                technology, creativity, and continuous learning.
+            </p>
+        </section>
+
+        <section class="about-card">
+            <h2>👋 My Introduction</h2>
+
+            <p>
+                Welcome to my corner of the digital world! I'm building my
+                knowledge of web development and software engineering one
+                project at a time.
+            </p>
+
+            <p>
+                I enjoy exploring how websites and applications are designed,
+                how code turns ideas into useful products, and how technology
+                can solve real-world problems.
+            </p>
+
+            <p>
+                I'm currently developing my skills through practice,
+                experimentation, and personal projects. My goal is to keep
+                improving and create digital experiences that are useful,
+                accessible, and enjoyable.
+            </p>
+        </section>
+
+        <section class="about-card">
+            <h2>🎯 My Interests</h2>
+
+            <div class="interest-grid">
+
+                <article class="interest-item">
+                    <h3>🌐 Web Development</h3>
+                    <p>
+                        Learning to build responsive, attractive, and
+                        interactive websites.
+                    </p>
+                </article>
+
+                <article class="interest-item">
+                    <h3>💻 Software Engineering</h3>
+                    <p>
+                        Exploring programming, problem-solving, and
+                        the process of building reliable software.
+                    </p>
+                </article>
+
+                <article class="interest-item">
+                    <h3>🛡️ Cybersecurity</h3>
+                    <p>
+                        Learning about digital safety, secure coding,
+                        and responsible security practices.
+                    </p>
+                </article>
+
+                <article class="interest-item">
+                    <h3>🚀 Continuous Learning</h3>
+                    <p>
+                        Exploring new tools, practising new skills,
+                        and improving through projects.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="about-card">
+            <h2>🌟 My Vision</h2>
+
+            <p>
+                My vision is to grow into a capable software developer who
+                creates meaningful digital products, collaborates with
+                others, and continues learning as technology evolves.
+            </p>
+
+            <p>
+                I'm focused on building a strong foundation, gaining
+                practical experience, and turning ideas into real projects.
+            </p>
+        </section>
+
+        <section class="about-quote">
+            <p>
+                "Every expert starts as a beginner.
+                <span>Keep learning. Keep building. Keep growing.</span>"
+            </p>
+
+            <div class="about-center">
+                <a href="project.html" class="about-button">
+                    Explore My Projects →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Morakinyo Martins Iyanuoluwa. Built with passion.</p>
+    </footer>
+
+</body>
+</html>
